@@ -1,9 +1,11 @@
 package javafortester.chap005testwithourownclasses.domainobject.example;
 
 import javafortester.chap005testwithourownclasses.domainobject.TestAppEnv;
+//import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+
 
 public class TestAppEnvironmentTest {
 
