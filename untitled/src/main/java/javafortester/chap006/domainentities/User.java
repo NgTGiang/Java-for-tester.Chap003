@@ -7,15 +7,15 @@ public class User {
     private String password;
     private TestAppEnv testAppEnv;
 
-    public User(){
-        this("username", "password");
-//        username = "username";
-//        password = "password";
-    }
+    public User() {
+//        this("username", "password");
+        username = "username";
+        password = "password";
+}
 
-    public User(String username, String password) {
+    public User(String username, String password) throws InvalidPassword {
         this.username = username;
-        setPassword(this.password = password);
+        this.password = password;
         this.testAppEnv = new TestAppEnv();
     }
 
@@ -35,9 +35,9 @@ public class User {
         return password;
     }
 
-    public void setPassword(String password){
+    public void setPassword(String password) throws InvalidPassword{
         if(password.length() < 7){
-            throw new IllegalArgumentException("Password must be > 6 chars");
+            throw new InvalidPassword("Password must be > 6 chars");
         }
     }
 

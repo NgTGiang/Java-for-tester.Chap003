@@ -1,5 +1,6 @@
 package javafortester.chap009arraysandforloopiteration.example;
 
+import javafortester.chap006.domainentities.InvalidPassword;
 import javafortester.chap006.domainentities.User;
 import javafortester.chap009arraysandforloopiteration.MultipleArray;
 import org.junit.Test;
@@ -11,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 public class ArrayAndForLoopIteration {
 
     @Test
-    public void createAnArrayOfUserTest(){
+    public void createAnArrayOfUserTest() throws InvalidPassword {
         User[] arrayUsers = new User [3];
         arrayUsers[0] = new  User("user1", "passuser");
         arrayUsers[1] = new  User("user2", "passuser");
@@ -23,7 +24,7 @@ public class ArrayAndForLoopIteration {
     }
 
     @Test
-    public void createAnArrayOf100Users(){
+    public void createAnArrayOf100Users() throws InvalidPassword {
         User[] users = new User[100];
 
         for(int i = 0; i < 100; i++){

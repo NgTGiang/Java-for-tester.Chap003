@@ -1,5 +1,6 @@
 package javafortester.chap010introducingcollection.example;
 
+import javafortester.chap006.domainentities.InvalidPassword;
 import javafortester.chap006.domainentities.User;
 import org.junit.Assert;
 import org.junit.Test;
@@ -39,7 +40,7 @@ public class CollectionExampleTest {
     }
 
     @Test
-    public void createAndManipulateACollectionOfUsersTest() {
+    public void createAndManipulateACollectionOfUsersTest() throws InvalidPassword {
 //    Create a Collection of Users
         Collection<User> users = new ArrayList<User>();
 
@@ -95,7 +96,7 @@ public class CollectionExampleTest {
     }
 
     @Test
-    public void createAndManipulateAListOfUsersTest() {
+    public void createAndManipulateAListOfUsersTest() throws InvalidPassword {
 //    Create the List
         List<User> usersList = new ArrayList<>();
 
@@ -125,7 +126,7 @@ public class CollectionExampleTest {
     }
 
     @Test
-    public void createAndManipulateASetOfUsers(){
+    public void createAndManipulateASetOfUsers() throws InvalidPassword {
 //    Create a User
         User user = new User("user", "password");
 
@@ -141,7 +142,7 @@ public class CollectionExampleTest {
     }
 
     @Test
-    public void createAndManipulateAMapOfUserObjectsTest(){
+    public void createAndManipulateAMapOfUserObjectsTest() throws InvalidPassword {
 //    Create a Map of User objects
         Map<String, User> mapUser = new HashMap<>();
         Assert.assertEquals(0, mapUser.size());

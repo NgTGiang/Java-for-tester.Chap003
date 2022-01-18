@@ -1,5 +1,6 @@
 package javafortester.chap006domainentities.examples;
 
+import javafortester.chap006.domainentities.InvalidPassword;
 import javafortester.chap006.domainentities.User;
 import org.junit.Test;
 
@@ -8,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class UserTest {
 
     @Test
-    public void canConstructANewUser(){
+    public void canConstructANewUser() throws InvalidPassword {
         User  user = new User();
 
         assertEquals("default username expected",
@@ -20,7 +21,7 @@ public class UserTest {
     }
 
     @Test
-    public void canConstructWithUsernameAndPassword(){
+    public void canConstructWithUsernameAndPassword() throws InvalidPassword {
         User user = new User("admin", "P@ssw0rd");
 
         assertEquals("default username expected",

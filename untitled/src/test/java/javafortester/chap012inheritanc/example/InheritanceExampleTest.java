@@ -8,7 +8,7 @@ import org.junit.Test;
 public class InheritanceExampleTest {
 
     @Test
-    public void createAnEnvironmentUser(){
+    public void createAnEnvironmentUser() throws javafortester.chap006.domainentities.InvalidPassword {
         EnvironmentUser enuser = new EnvironmentUser();
 
         Assert.assertEquals("username", enuser.getUsername());
@@ -16,11 +16,22 @@ public class InheritanceExampleTest {
     }
 
     @Test
-    public void createAReadOnlyUser(){
+    public void createAReadOnlyUser() throws javafortester.chap006.domainentities.InvalidPassword {
         ReadOnlyUser readOnlyUser = new ReadOnlyUser();
 
         Assert.assertEquals("username", readOnlyUser.getUsername());
         Assert.assertEquals("password", readOnlyUser.getPassword());
         Assert.assertEquals("Read only", readOnlyUser.getPermission());
     }
+    @Test(expected = NullPointerException.class)
+    public void nullPointerExceptionExpected(){
+        Integer age=null;
+        age.toString();
+    }
+    public class InvalidPassword extends Exception {
+        public InvalidPassword(String message) {
+            super(message);
+        }
+    }
+
 }
