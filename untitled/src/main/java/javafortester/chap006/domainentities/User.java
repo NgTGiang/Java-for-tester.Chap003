@@ -15,7 +15,7 @@ public class User {
 
     public User(String username, String password) throws InvalidPassword {
         this.username = username;
-        this.password = password;
+        setPassword(this.password = password);
         this.testAppEnv = new TestAppEnv();
     }
 
@@ -38,6 +38,18 @@ public class User {
     public void setPassword(String password) throws InvalidPassword{
         if(password.length() < 7){
             throw new InvalidPassword("Password must be > 6 chars");
+        }
+
+        if(!password.matches(".*[0123456789]+.*")){
+            throw new InvalidPassword("Password must have a digit");
+        }
+
+        if(!password.matches(".*[A-Z]+.*")){
+            throw new InvalidPassword("password must have an uppercase letter");
+        }
+
+        if(!password.matches(".*[!@#$%^&*].*")){
+            throw new InvalidPassword("password must have a special character");
         }
     }
 
