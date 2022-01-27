@@ -1,4 +1,4 @@
-package javafortester.chap13moreexceptions.example;
+package javafortester.chap013moreexceptions.example;
 
 import javafortester.chap006.domainentities.InvalidPassword;
 import javafortester.chap006.domainentities.User;
