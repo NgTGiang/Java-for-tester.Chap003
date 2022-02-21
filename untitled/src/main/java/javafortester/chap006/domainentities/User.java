@@ -2,7 +2,7 @@ package javafortester.chap006.domainentities;
 
 import javafortester.chap005testwithourownclasses.domainobject.TestAppEnv;
 
-public class User {
+public class User implements Comparable<User>{
     private String username;
     private String password;
     private TestAppEnv testAppEnv;
@@ -36,25 +36,30 @@ public class User {
     }
 
     public void setPassword(String password) throws InvalidPassword{
-        if(password.length() < 7){
-            throw new InvalidPassword("Password must be > 6 chars");
-        }
+//        if(password.length() < 7){
+//            throw new InvalidPassword("Password must be > 6 chars");
+//        }
+//
+//        if(!password.matches(".*[0123456789]+.*")){
+//            throw new InvalidPassword("Password must have a digit");
+//        }
+//
+//        if(!password.matches(".*[A-Z]+.*")){
+//            throw new InvalidPassword("password must have an uppercase letter");
+//        }
 
-        if(!password.matches(".*[0123456789]+.*")){
-            throw new InvalidPassword("Password must have a digit");
-        }
-
-        if(!password.matches(".*[A-Z]+.*")){
-            throw new InvalidPassword("password must have an uppercase letter");
-        }
-
-        if(!password.matches(".*[!@#$%^&*].*")){
-            throw new InvalidPassword("password must have a special character");
-        }
+//        if(!password.matches(".*[!@#$%^&*]+.*")){
+//            throw new InvalidPassword("password must have a special character");
+//        }
     }
 
     @Override
     public String toString(){
         return "username: " + username + ", password: " + password;
+    }
+
+    @Override
+    public int compareTo(User o) {
+        return 0;
     }
 }
